@@ -15,9 +15,12 @@ services:
       # - "443:443"
       - "6800:6800"
     volumes_from:
-      - webdav
+      - /mnt/data/nas_data:/data
+      - aria2-conf:/root/conf \
     environment:
       - VIRTUAL_HOST=aria2.zgray.com
     links:
       - webdav
     restart: always
+volumes:
+  aria2-conf:
