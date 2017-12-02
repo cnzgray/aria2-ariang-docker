@@ -17,7 +17,7 @@ services:
     volumes_from:
       - webdav
     environment:
-      - VIRTUAL_HOST=ariang.zgray.com
+      - VIRTUAL_HOST=aria2.zgray.com
     links:
       - webdav
     restart: always

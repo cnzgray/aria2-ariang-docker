@@ -13,5 +13,7 @@ VOLUME /media
 COPY entrypoint.sh /
 COPY nginx.conf /etc/nginx/
 
+RUN chmod +x entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
