@@ -16,7 +16,7 @@ services:
       - "6800:6800"
     volumes_from:
       - /mnt/data/nas_data:/data
-      - aria2-conf:/root/conf \
+      - aria2-conf:/root/conf
     environment:
       - VIRTUAL_HOST=aria2.zgray.com
     links:
