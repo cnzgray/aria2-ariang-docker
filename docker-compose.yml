@@ -18,7 +18,7 @@ services:
       - /mnt/data/nas_data:/data
       - aria2-conf:/root/conf
     environment:
-      - VIRTUAL_HOST=aria2.zgray.com
+      - VIRTUAL_HOST=ariang.zgray.com
     links:
       - webdav
     restart: always
