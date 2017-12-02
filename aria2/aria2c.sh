@@ -12,7 +12,7 @@ touch /root/conf/aria2.session
 
 if [[ ! -e /root/conf/aria2.conf ]]
 then
-  cp /root/conf/aria2.conf.default /config/aria2.conf
+  cp /root/conf/aria2.conf.default /root/conf/aria2.conf
 fi
 
 if [ "$SSL" = "true" ]; then

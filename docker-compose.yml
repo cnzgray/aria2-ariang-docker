@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  webdav:
+    image: webdav:latest
+    volumes:
+      - /mnt/data/nas_data:/media
+    environment:
+      - VIRTUAL_HOST=webdav.zgray.com
+    restart: always
+  aria2:
+    image: aria2-ariang-docker:latest
+    ports:
+      # - "80:80"
+      # - "443:443"
+      - "6800:6800"
+    volumes_from:
+      - webdav
+    environment:
+      - VIRTUAL_HOST=ariang.zgray.com
+    links:
+      - webdav
+    restart: always
