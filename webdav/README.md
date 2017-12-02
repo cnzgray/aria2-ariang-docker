@@ -5,10 +5,9 @@ Usage:
 ```bash
 cd webdav && docker build --rm -f Dockerfile -t webdav:latest .
 
-docker volume create aria2-conf
 docker run --name webdav -d --restart always \
     -v /mnt/download:/media\
-    -p 80:80 \
+    -p 8000:80 \
     -e UID=$UID \
     webdav:latest
 ```

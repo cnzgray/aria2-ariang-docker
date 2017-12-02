@@ -1,14 +1,6 @@
 version: '2'
 
 services:
-  webdav:
-    image: webdav:latest
-    volumes:
-      - /mnt/data/nas_data:/media
-    environment:
-      - VIRTUAL_HOST=webdav.zgray.com
-    restart: always
-    network_mode: bridge
   aria2:
     image: aria2-ariang-docker:latest
     ports:
@@ -24,5 +16,12 @@ services:
       - webdav
     restart: always
     network_mode: bridge
+  webdav:
+    image: webdav:latest
+    volumes_from:
+      - aria2
+    ports:
+      - "8000:80"
+    restart: always
 volumes:
   aria2-conf:

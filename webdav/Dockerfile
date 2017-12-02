@@ -8,7 +8,7 @@ RUN apt-get update \
 
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 RUN chmod go+rwX -R /var /run
-VOLUME /media
+# VOLUME /media
 
 COPY entrypoint.sh /
 COPY nginx.conf /etc/nginx/
