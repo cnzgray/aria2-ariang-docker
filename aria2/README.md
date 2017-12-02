@@ -1,7 +1,7 @@
 ## Usage
 
 ```
-cd aria2 && docker build -rm -f Dockerfile -t aria2-ariang-docker:latest .
+cd aria2 && docker build --rm -f Dockerfile -t aria2-ariang-docker:latest .
 
 docker volume create aria2-conf
 docker run --name ariang -d --restart always \

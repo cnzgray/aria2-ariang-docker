@@ -3,7 +3,7 @@
 Usage:
 
 ```bash
-cd webdav && docker build -rm -f Dockerfile -t webdav:latest .
+cd webdav && docker build --rm -f Dockerfile -t webdav:latest .
 
 docker volume create aria2-conf
 docker run --name webdav -d --restart always \
