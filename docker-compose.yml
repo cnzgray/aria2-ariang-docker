@@ -8,6 +8,7 @@ services:
     environment:
       - VIRTUAL_HOST=webdav.zgray.com
     restart: always
+    network_mode: bridge
   aria2:
     image: aria2-ariang-docker:latest
     ports:
@@ -22,5 +23,6 @@ services:
     links:
       - webdav
     restart: always
+    network_mode: bridge
 volumes:
   aria2-conf:
