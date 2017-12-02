@@ -12,8 +12,6 @@ services:
       - aria2-conf:/root/conf
     environment:
       - VIRTUAL_HOST=ariang.zgray.com
-    links:
-      - webdav
     restart: always
     network_mode: bridge
   webdav:
@@ -22,6 +20,8 @@ services:
       - aria2
     ports:
       - "8000:80"
+    links:
+      - aria2
     restart: always
 volumes:
   aria2-conf:
